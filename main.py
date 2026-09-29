@@ -9,7 +9,7 @@ from kivy.uix.textinput import TextInput
 from kivy.uix.scrollview import ScrollView
 from kivy.properties import StringProperty
 from kivy.storage.jsonstore import JsonStore
-from kivy.core.window import Window
+#from kivy.core.window import Window
 
 
 #Window.size = (390, 844)

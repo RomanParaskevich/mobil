@@ -6,13 +6,13 @@
 [app]
 
 # (str) Title of your application
-title = Рыболовный Дневник
+title = My Application
 
 # (str) Package name
-package.name = fishingtracker
+package.name = myapp
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.fishingapp
+package.domain = org.test
 
 # (str) Source code where the main.py live
 source.dir = .
@@ -34,7 +34,7 @@ source.include_exts = py,png,jpg,kv,atlas,json
 #source.exclude_patterns = license,images/*/*.jpg
 
 # (str) Application versioning (method 1)
-version = 1.0
+version = 0.4
 
 # (str) Application versioning (method 2)
 # version.regex = __version__ = ['"](.*)['"]
@@ -42,7 +42,7 @@ version = 1.0
 
 # (list) Application requirements
 # comma separated e.g. requirements = sqlite3,kivy
-requirements = python3,kivy,pillow
+requirements = python3,kivy
 
 # (str) Custom source folders for requirements
 # Sets custom source for any requirements with recipes
@@ -109,16 +109,16 @@ fullscreen = 0
 #android.features = android.hardware.usb.host
 
 # (int) Target Android API, should be as high as possible.
-android.api = 34
+android.api = 36
 
 # (int) Minimum API your APK / AAB will support.
-android.minapi = 21
+#android.minapi = 24
 
 # (int) Android SDK version to use
 #android.sdk = 20
 
 # (str) Android NDK version to use
-#android.ndk = 23b
+android.ndk = 28c
 
 # (int) Android NDK API to use. This is the minimum API your app will support, it should usually match android.minapi.
 #android.ndk_api = 21
@@ -162,10 +162,8 @@ android.minapi = 21
 # use that parameter to set custom Java class which extends PythonService
 #android.service_class_name = org.kivy.android.PythonService
 
-android.private_storage = 1
-
 # (str) Android app theme, default is ok for Kivy-based app
-android.apptheme = "@android:style/Theme.NoTitleBar"
+# android.apptheme = "@android:style/Theme.NoTitleBar"
 
 # (list) Pattern to whitelist for the whole project
 #android.whitelist =
@@ -337,10 +335,10 @@ android.allow_backup = True
 #p4a.fork = kivy
 
 # (str) python-for-android branch to use, defaults to master
-#p4a.branch = develop
+p4a.branch = develop
 
 # (str) python-for-android specific commit to use, defaults to HEAD, must be within p4a.branch
-#p4a.commit = d2ee8c5
+#p4a.commit = HEAD
 
 # (str) python-for-android git clone directory
 #p4a.source_dir =

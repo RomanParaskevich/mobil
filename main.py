@@ -9,7 +9,8 @@ from kivy.uix.textinput import TextInput
 from kivy.uix.scrollview import ScrollView
 from kivy.properties import StringProperty
 from kivy.storage.jsonstore import JsonStore
-#from kivy.core.window import Window
+from kivy.core.window import Window
+from kivy.metrics import dp
 
 
 #Window.size = (390, 844)
@@ -44,13 +45,13 @@ class StatisticsScreen(Screen):
             row = BoxLayout(
                 orientation='horizontal', 
                 size_hint_y=None, 
-                height=50, 
+                height=dp(50), 
                 padding=[10, 5, 10, 5],
                 spacing=10
             )
             
             fish_label = Label(
-                text=f"🐟 {item['species']}: {item['weight']} кг", 
+                text=f" {item['species']}: {item['weight']} кг", 
                 color=(0, 0, 0, 1),
                 halign='left',
                 valign='middle'
@@ -58,9 +59,9 @@ class StatisticsScreen(Screen):
             fish_label.bind(size=fish_label.setter('text_size'))
             
             delete_btn = Button(
-                text="❌",
+                text="X",
                 size_hint_x=None,
-                width=40,
+                width=dp(40),
                 background_color=(0.9, 0.3, 0.3, 1),
                 background_normal='',
                 on_release=lambda btn, idx=original_index: self.delete_fish_item(idx)
@@ -165,12 +166,12 @@ if __name__ == '__main__':
             bold: True
             color: 0.1, 0.2, 0.4, 1
             size_hint_y: None
-            height: 50
+            height: '50dp'
 
         GridLayout:
             cols: 2
             size_hint_y: None
-            height: 80
+            height: '80dp'
             spacing: 10
 
             BoxLayout:
@@ -219,7 +220,7 @@ if __name__ == '__main__':
             bold: True
             color: 0, 0, 0, 1
             size_hint_y: None
-            height: 30
+            height: '30dp'
             halign: 'left'
             text_size: self.size
 
@@ -244,7 +245,7 @@ if __name__ == '__main__':
             text: "+ Добавить улов"
             font_size: '16sp'
             size_hint_y: None
-            height: 50
+            height: '50dp'
             background_color: 0.2, 0.6, 1, 1
             background_normal: ''
             on_release: root.manager.current = 'input'
@@ -269,14 +270,14 @@ if __name__ == '__main__':
             bold: True
             color: 0.1, 0.2, 0.4, 1
             size_hint_y: None
-            height: 50
+            height: '50dp'
 
         Label:
             text: "Что вы поймали?"
             font_size: '16sp'
             color: 0, 0, 0, 1
             size_hint_y: None
-            height: 20
+            height: '20dp'
             halign: 'left'
             text_size: self.size
 
@@ -285,7 +286,7 @@ if __name__ == '__main__':
             hint_text: "Вид рыбы (например, Плотва)"
             multiline: False
             size_hint_y: None
-            height: 45
+            height: '45dp'
             font_size: '16sp'
             padding: [10, 10, 10, 10]
 
@@ -294,7 +295,7 @@ if __name__ == '__main__':
             hint_text: "Вес в кг (например, 1.2)"
             multiline: False
             size_hint_y: None
-            height: 45
+            height: '45dp'
             font_size: '16sp'
             padding: [10, 10, 10, 10]
             input_filter: 'float'
@@ -304,7 +305,7 @@ if __name__ == '__main__':
             font_size: '14sp'
             color: 1, 0, 0, 1
             size_hint_y: None
-            height: 25
+            height: '25dp'
         
         Widget:
             size_hint_y: 1
@@ -313,7 +314,7 @@ if __name__ == '__main__':
             text: "Сохранить улов"
             font_size: '16sp'
             size_hint_y: None
-            height: 50
+            height: '50dp'
             background_color: 0.2, 0.7, 0.3, 1
             background_normal: ''
             on_release: root.save_catch()
@@ -322,7 +323,7 @@ if __name__ == '__main__':
             text: "Отмена"
             font_size: '16sp'
             size_hint_y: None
-            height: 50
+            height: '50dp'
             background_color: 0.7, 0.7, 0.3, 1
             background_normal: ''
             on_release: 
